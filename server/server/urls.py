@@ -2,8 +2,8 @@ from django.urls import path
 from api import views
 
 urlpatterns = [
-    path('/api/candlestick-data/', views.candlestick_data),
-    path('/api/line-chart-data/', views.line_chart_data),
-    path('/api/bar-chart-data/', views.bar_chart_data),
-    path('/api/pie-chart-data/', views.pie_chart_data),
+    path('api/candlestick-data/', views.candlestick_data),
+    path('api/line-chart-data/', views.line_chart_data),
+    path('api/bar-chart-data/', views.bar_chart_data),
+    path('api/pie-chart-data/', views.pie_chart_data),
 ]

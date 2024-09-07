@@ -2,11 +2,16 @@
 
 This project is a web application built using **Next.js** for the frontend and **Django** for the backend. It features a basic dashboard that displays multiple charts, with data retrieved from a Django API backend. The frontend is styled using **Tailwind CSS** and developed using **TypeScript**.
 
+<p align="center" width="100%">
+     <img alt="Dashboard Wireframe" width="700px" src="https://github.com/user-attachments/assets/86a1a6f0-dcc8-484f-a159-e55d6d5a1276" />
+</p>
+
 ## Table of Contents
 
 - [Dashboard](#dashboard)
   - [Table of Contents](#table-of-contents)
-  - [Tech Stack](#tech-stack)
+  - [Libraries and Tools Used](#libraries-and-tools-used)
+  - [Approach and Thought Process](#approach-and-thought-process)
   - [Installation](#installation)
     - [Prerequisites](#prerequisites)
     - [Frontend Setup](#frontend-setup)
@@ -14,16 +19,32 @@ This project is a web application built using **Next.js** for the frontend and *
   - [Usage](#usage)
   - [API Endpoints](#api-endpoints)
 
-## Tech Stack
+## Libraries and Tools Used
 
-- **Frontend:**
-  - Next.js
-  - TypeScript
-  - Tailwind CSS
-- **Backend:**
-  - Django
-  - Django Rest Framework
-  
+This project uses the following libraries and tools:
+
+- **Next.js**: A React framework used for server-side rendering and static site generation.
+- **Django**: Backend framework used for handling API requests and managing the data.
+- **TypeScript**: Type safety for the frontend codebase.
+- **Tailwind CSS**: Utility-first CSS framework used to style the frontend.
+- **Django Rest Framework (DRF)**: For building APIs in Django.
+- **Axios** (or `fetch`): For making HTTP requests from the frontend to the backend.
+- **dotenv**: To manage environment variables and secrets in the project.
+
+## Approach and Thought Process
+
+1. **Planning**: The project structure was split between a Next.js frontend and a Django API backend to maintain clear separation of concerns—frontend for UI, backend for data and logic.
+
+2. **Backend Development**: Django and DRF were chosen for building REST APIs to handle CRUD operations and serve data to the frontend.
+
+3. **Frontend Development**: Next.js was selected for server-side rendering, with Tailwind CSS for styling and TypeScript for improved type safety.
+
+4. **API Integration**: The frontend communicates with the backend via `Axios` (or `fetch`), using environment variables from `.env.local` to set the API base URL.
+
+5. **Testing**: Both manual and automated tests were conducted to ensure proper frontend-backend communication and accurate data display.
+
+The approach focused on scalability, maintainability, and performance.
+
 ## Installation
 
 ### Prerequisites

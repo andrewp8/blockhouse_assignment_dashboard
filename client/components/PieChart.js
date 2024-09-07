@@ -7,7 +7,11 @@ export default function PieChart({ data }) {
 
   return (
     <div>
-      <h2>Pie Chart</h2>
+      <div className="ml-auto text-center">
+        <h1 className=" text-xl font-bold">Market Share by Region</h1>
+        <h2 className='font-bold'>TechCorp Inc.</h2>
+        <h6 className='text-sm'>2024 Market Share</h6>
+      </div>
       <Pie
         data={{
           labels: data.labels,

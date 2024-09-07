@@ -1,8 +1,10 @@
 "use client";
 import { useEffect, useState } from 'react';
-import { Line, Bar, Pie } from 'react-chartjs-2';
 import { fetchCandlestickData, fetchLineChartData, fetchBarChartData, fetchPieChartData } from '../lib/api';
-import 'chart.js/auto';
+import LineChart from '../components/LineChart';
+import BarChart from '../components/BarChart';
+import PieChart from '../components/PieChart';
+import CandlestickChart from '../components/CandlestickChart';
 
 export default function Dashboard() {
   const [candlestickData, setCandlestickData] = useState(null);
@@ -16,32 +18,25 @@ export default function Dashboard() {
       const line = await fetchLineChartData();
       const bar = await fetchBarChartData();
       const pie = await fetchPieChartData();
-      setCandlestickData(candlestick);
+      setCandlestickData(candlestick.data);
       setLineChartData(line);
       setBarChartData(bar);
       setPieChartData(pie);
     }
     fetchData();
   }, []);
-  if (!lineChartData || !barChartData || !pieChartData) return <p>Loading...</p>;
+
+  if (!candlestickData || !lineChartData || !barChartData || !pieChartData) return <p>Loading...</p>;
 
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
 
       <div className="grid grid-cols-2 gap-4">
-        <div>
-          <h2 className="text-lg mb-2">Line Chart</h2>
-          <Line data={{ labels: lineChartData.labels, datasets: [{ label: 'Line Data', data: lineChartData.data }] }} />
-        </div>
-        <div>
-          <h2 className="text-lg mb-2">Bar Chart</h2>
-          <Bar data={{ labels: barChartData.labels, datasets: [{ label: 'Bar Data', data: barChartData.data }] }} />
-        </div>
-        <div>
-          <h2 className="text-lg mb-2">Pie Chart</h2>
-          <Pie data={{ labels: pieChartData.labels, datasets: [{ data: pieChartData.data }] }} />
-        </div>
+        <CandlestickChart data={candlestickData} />
+        <LineChart data={lineChartData} />
+        <BarChart data={barChartData} />
+        <PieChart data={pieChartData} />
       </div>
     </div>
   );

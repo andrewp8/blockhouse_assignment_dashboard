@@ -7,6 +7,10 @@ def candlestick_data(request):
         "data": [
             {"x": "2023-01-01", "open": 30, "high": 40, "low": 25, "close": 35},
             {"x": "2023-01-02", "open": 35, "high": 45, "low": 30, "close": 40},
+            {"x": "2023-01-03", "open": 12, "high": 60, "low": 10, "close": 51},
+            {"x": "2023-01-04", "open": 46, "high": 52, "low": 30, "close": 38},
+            {"x": "2023-01-05", "open": 38, "high": 40, "low": 24, "close": 26},
+            {"x": "2023-01-06", "open": 38, "high": 40, "low": 24, "close": 26},
         ]
     }
     return Response(data)

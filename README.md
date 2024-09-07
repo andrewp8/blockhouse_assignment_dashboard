@@ -41,7 +41,7 @@ This project uses the following libraries and tools:
 
 4. **API Integration**: The frontend communicates with the backend via `Axios` (or `fetch`), using environment variables from `.env.local` to set the API base URL.
 
-5. **Testing**: Both manual and automated tests were conducted to ensure proper frontend-backend communication and accurate data display.
+5. **Testing**: Tests were conducted to ensure proper frontend-backend communication and accurate data display.
 
 The approach focused on scalability, maintainability, and performance.
 

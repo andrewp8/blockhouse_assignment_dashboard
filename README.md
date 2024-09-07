@@ -58,7 +58,7 @@ The approach focused on scalability, maintainability, and performance.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/andrewp8/blockhouse_assignment_dashboard.git
+   git clone https://github.com/andrewp8/techcorp_dashboard.git
    cd client
    ```
 
